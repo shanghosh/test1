@@ -2,23 +2,23 @@ pipeline {
     agent any
 
     environment { 
-        MASTER = 'Master Jenkins'
+        CHILD = 'INT2 Jenkins'
     }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building main..${env.MASTER}'
+                echo 'Building int2..${env.MASTER}'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing main..'
+                echo 'Testing int2..${env.CHILD}'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying main....'
+                echo 'Deploying int2....'
             }
         }
     }
